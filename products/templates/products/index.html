@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Lista de produtos</h3>
+    <ul>
+        {% for product in products %}
+        <li>
+            <a href="{% url 'product' product.id %}">{{product.title}}</a> |
+            <a href="{% url 'edit_product' product.id %}">editar</a> |
+            <a href="{% url 'delete_product' product.id %}">deletar</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <br/>
+    <a href="{% url 'new_product' %}">Novo produto</a>
+{% endblock %}

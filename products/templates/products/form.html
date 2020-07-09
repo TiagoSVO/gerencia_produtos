@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Formulário de Produto</h3>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">
+            Salvar
+        </button>
+        <a href="{% url 'list_products'%}">
+            Cancelar
+        </a>
+    </form>
+{% endblock %}

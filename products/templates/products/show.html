@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% if product %}
+        <h3>{{ product.title }}</h3>
+        <h4>{{ product.subtitle }}</h4>
+        <img width="250px" src="{{ product.photo.url }}" alt="{{ product.title }} - {{ product.subtitle }}">
+        <p>{{product.description}}</p>
+        <p>
+            <strong>Preço:</strong> R$ {{product.price}}
+        </p>
+    {% else %}
+        <h3>Ops... Produto não encontrado!</h3>
+    {%endif%}
+{% endblock %}
