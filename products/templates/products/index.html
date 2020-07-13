@@ -2,15 +2,15 @@
 
 {% block content %}
     <h3>Lista de produtos</h3>
-    <ul>
+    <ul class="list-group">
         {% for product in products %}
-        <li>
-            <a href="{% url 'product' product.id %}">{{product.title}}</a> |
-            <a href="{% url 'edit_product' product.id %}">editar</a> |
-            <a href="{% url 'delete_product' product.id %}">deletar</a>
+        <li class="list-group-item">
+            <a href="{% url 'product' product.id %}" class="pull-left">{{product.title}}</a>
+            <a href="{% url 'delete_product' product.id %}" class="btn btn-danger btn-sm pull-right"><i class="fa fa-trash"></i></a><span class="pull-right" style="margin: 0px 5px;">|</span>
+            <a href="{% url 'edit_product' product.id %}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-pencil"></i></a>
         </li>
         {% endfor %}
     </ul>
     <br/>
-    <a href="{% url 'new_product' %}">Novo produto</a>
+    <a href="{% url 'new_product' %}" class="btn btn-info">Novo produto</a>
 {% endblock %}
