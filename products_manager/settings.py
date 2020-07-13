@@ -148,5 +148,5 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/products/'
 
 STATICFILES_DIRS = [
-    'static',
+    os.path.join(BASE_DIR, 'static'),
 ]
